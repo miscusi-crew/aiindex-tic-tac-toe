@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tic-Tac-Toe</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="base.css">
+<style>
+  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;max-width:360px;aspect-ratio:1;margin:.75rem 0}
+  .board button{padding:0;font-size:clamp(2rem,12vw,3.5rem);font-weight:700;line-height:1;border-radius:.75rem}
+  .board button.x{color:var(--accent)}
+  .board button.o{color:var(--good)}
+  .board button.win{background:color-mix(in srgb,var(--accent) 15%,var(--card));border-color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Tic-Tac-Toe</h1>
+  <p class="sub">Three in a row wins. You're X and go first.</p>
+  <div class="row">
+    <label for="mode">Opponent</label>
+    <select id="mode">
+      <option value="easy">Computer · Easy</option>
+      <option value="hard">Computer · Unbeatable</option>
+      <option value="friend">A friend (same device)</option>
+    </select>
+    <button id="new" class="primary">New round</button>
+  </div>
+  <div class="stats"><span>X <b id="sx">0</b></span><span>O <b id="so">0</b></span><span>Draws <b id="sd">0</b></span></div>
+  <div class="board" id="board" role="grid" aria-label="Tic-tac-toe board"></div>
+  <p class="msg" id="msg" role="status"></p>
+  <button id="reset">Reset score</button>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
